@@ -7,7 +7,7 @@ import mascotLogo from "@/assets/mascot-logo.png";
 import { Button } from "@/components/ui/button";
 import { FileText, Youtube, StickyNote, Image as ImageIcon, Sparkles, Brain, Repeat, Flame, Zap, Upload, PlayCircle } from "lucide-react";
 
-export const Route = createFileRoute("/")({
+export const Route = createFileRoute("/onboarding")({
   head: () => ({
     meta: [
       { title: "PikaDecks — Turn Anything Into Flashcards" },
