@@ -142,3 +142,44 @@
     color: var(--color-foreground);
   }
 }
+
+@layer utilities {
+  @keyframes pika-float {
+    0%, 100% { transform: translateY(0) rotate(-2deg); }
+    50%      { transform: translateY(-14px) rotate(2deg); }
+  }
+  @keyframes pika-breathe {
+    0%, 100% { transform: scale(1); }
+    50%      { transform: scale(1.04); }
+  }
+  @keyframes pika-wiggle {
+    0%, 100% { transform: rotate(-3deg); }
+    50%      { transform: rotate(3deg); }
+  }
+  @keyframes pika-pop {
+    0%   { transform: scale(0.6) rotate(-12deg); opacity: 0; }
+    60%  { transform: scale(1.08) rotate(4deg); opacity: 1; }
+    100% { transform: scale(1) rotate(0); opacity: 1; }
+  }
+  @keyframes sparkle-spin {
+    0%, 100% { transform: scale(0.9) rotate(0deg); opacity: 0.7; }
+    50%      { transform: scale(1.25) rotate(180deg); opacity: 1; }
+  }
+  @keyframes orbit {
+    0%   { transform: rotate(0deg) translateX(110px) rotate(0deg); }
+    100% { transform: rotate(360deg) translateX(110px) rotate(-360deg); }
+  }
+  @keyframes shadow-pulse {
+    0%, 100% { transform: scaleX(1); opacity: 0.35; }
+    50%      { transform: scaleX(0.7); opacity: 0.2; }
+  }
+
+  .animate-pika-float   { animation: pika-float 3.6s ease-in-out infinite; }
+  .animate-pika-breathe { animation: pika-breathe 2.4s ease-in-out infinite; }
+  .animate-pika-wiggle  { animation: pika-wiggle 0.6s ease-in-out; }
+  .animate-pika-pop     { animation: pika-pop 0.6s cubic-bezier(.34,1.56,.64,1); }
+  .animate-sparkle      { animation: sparkle-spin 2s ease-in-out infinite; }
+  .animate-orbit        { animation: orbit 8s linear infinite; }
+  .animate-shadow-pulse { animation: shadow-pulse 3.6s ease-in-out infinite; }
+}
+
