@@ -97,19 +97,42 @@ function Onboarding() {
 
         {/* Hero mascot */}
         <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-6 pt-4 pb-2">
-          <div className="relative">
-            <div className="absolute inset-0 -m-6 rounded-full bg-white/60 blur-2xl" />
-            <img
-              key={i}
-              src={s.mascot}
-              alt=""
-              className="relative size-56 object-contain drop-shadow-xl animate-in fade-in zoom-in-95 duration-500"
-            />
-            {/* floating sparkles */}
-            <Sparkles className="absolute -top-2 -right-2 size-6 text-amber-400 animate-pulse" />
-            <Sparkles className="absolute bottom-4 -left-4 size-5 text-yellow-500 animate-pulse [animation-delay:300ms]" />
+          <div key={i} className="relative size-64 flex items-center justify-center animate-pika-pop">
+            {/* halo */}
+            <div className="absolute inset-4 rounded-full bg-gradient-to-b from-amber-200/70 to-transparent blur-2xl" />
+            {/* ground shadow */}
+            <div className="absolute bottom-2 h-3 w-32 rounded-[50%] bg-amber-900/30 blur-md animate-shadow-pulse" />
+
+            {/* orbiting sparkles */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="animate-orbit">
+                <Sparkles className="size-5 text-amber-400 drop-shadow" />
+              </div>
+            </div>
+            <div className="absolute inset-0 flex items-center justify-center [animation-delay:-2s]">
+              <div className="animate-orbit [animation-duration:11s] [animation-direction:reverse]">
+                <Zap className="size-4 text-orange-400 drop-shadow" />
+              </div>
+            </div>
+
+            {/* mascot — bobs up and down */}
+            <div className="relative animate-pika-float">
+              <div className="animate-pika-breathe">
+                <img
+                  src={s.mascot}
+                  alt=""
+                  className="relative size-52 object-contain drop-shadow-[0_18px_18px_rgba(180,120,0,0.25)]"
+                />
+              </div>
+            </div>
+
+            {/* fixed sparkles */}
+            <Sparkles className="absolute top-2 right-4 size-6 text-amber-400 animate-sparkle" />
+            <Sparkles className="absolute bottom-8 left-2 size-5 text-yellow-500 animate-sparkle [animation-delay:600ms]" />
+            <Sparkles className="absolute top-10 left-6 size-3 text-orange-300 animate-sparkle [animation-delay:1200ms]" />
           </div>
         </div>
+
 
         {/* Copy + chips */}
         <div className="relative z-10 px-6 pb-2 text-center">
